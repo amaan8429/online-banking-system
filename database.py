@@ -1,12 +1,11 @@
 
 from odmantic import Model,Field,SyncEngine
-from transaction_history import transaction_history_func
 
 myengine=SyncEngine()
 
 
 class UserDatabase(Model):
-    name: str
+    name: str = Field(primary_field = True)
     age: int = Field(ge=18)
     balance:int = 0
     password:int 
